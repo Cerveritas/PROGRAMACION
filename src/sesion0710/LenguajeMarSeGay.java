@@ -19,9 +19,9 @@ public class LenguajeMarSeGay {
         // solicitud y lectura del numero del personaje
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca el personaje que quiere usar;");
-        System.out.println("Pulse 1 para seleccionar a STEVE");
-        System.out.println("Pulse 2 para seleccionar a MARIO");
-        System.out.println("Pulse 3 para seleccionar a tu abuela"); //corregir al finalizar
+        System.out.println("Pulse 1 para seleccionar a CUADRADO");
+        System.out.println("Pulse 2 para seleccionar a TRIANGULO");
+        System.out.println("Pulse 3 para seleccionar a tu ROMBO"); //corregir al finalizar
         personajes = sc.nextInt();
 
         // determina el personaje escogido
