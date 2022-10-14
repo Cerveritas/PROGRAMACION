@@ -9,30 +9,30 @@ import java.util.Scanner;
 *  Si metemos un numero fuera del rango indicado saldra una mensaje de error.
  */
 
-public class LenguajeMarSeGay {
+public class TusFiguras {
 
     public static void main(String[] args) {
 
-        // declaramos y inicializamos la variable personaje
-        int personajes =0;
+        // declaramos y inicializamos la variable numero
+        int numero =0;
 
-        // solicitud y lectura del numero del personaje
+        // solicitud y lectura del numero
         Scanner sc = new Scanner(System.in);
-        System.out.println("Introduzca el personaje que quiere usar;");
-        System.out.println("Pulse 1 para seleccionar a CUADRADO");
-        System.out.println("Pulse 2 para seleccionar a TRIANGULO");
-        System.out.println("Pulse 3 para seleccionar a tu ROMBO"); //corregir al finalizar
-        personajes = sc.nextInt();
+        System.out.println("Introduzca un numero indicado para visualizar la figura elegida;");
+        System.out.println("Pulse 1 para seleccionar un CUADRADO azul");
+        System.out.println("Pulse 2 para seleccionar un TRIANGULO morado");
+        System.out.println("Pulse 3 para seleccionar un  ROMBO verde");
+        numero = sc.nextInt();
 
-        // determina el personaje escogido
-        if (personajes == 1)
+        // determina la figura
+        if (numero == 1)
         {
             System.out.printf("\033[36m  ██████████  \n");
             System.out.printf("\033[36m  █        █  \n");
             System.out.printf("\033[36m  █        █  \n");
             System.out.printf("\033[36m  ██████████  \n");
         }
-        else if (personajes == 2)
+        else if (numero == 2)
         {
             System.out.printf("\033[35m      ██      \n");
             System.out.printf("\033[35m     █  █     \n");
@@ -41,7 +41,7 @@ public class LenguajeMarSeGay {
             System.out.printf("\033[35m  █        █  \n");
             System.out.printf("\033[35m  ██████████  \n");
         }
-        else if (personajes == 3)
+        else if (numero == 3)
         {
             System.out.printf("\033[32m      ██      \n");
             System.out.printf("\033[32m     █  █     \n");
@@ -52,27 +52,10 @@ public class LenguajeMarSeGay {
             System.out.printf("\033[32m     █  █     \n");
             System.out.printf("\033[32m      ██      \n");
         }
+        // en el caso que no metamos un numero pedido (1, 2, 3), dara error.
         else
         {
             System.out.println("No has introducido un numero correcto, intentelo de nuevo");
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
 }
