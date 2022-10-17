@@ -36,16 +36,5 @@ public class SalidaEstandar {
             System.out.println("\033[31m ▅▅     ▅▅");
             System.out.println("\033[31m ▅▅     ▅▅");
             System.out.println("\033[31m ▅▅▅▅▅▅▅▅▅");
-
-
-
-
     }
-
-
-
-
-
-
-
 }
