@@ -11,6 +11,8 @@ public class Apartado1 {
      */
     public static void main(String[] args) {
 
+    // introduccion
+
     System.out.print    ("\033[36m ############################################################################\n");
     System.out.print    ("\033[36m #         Bienvenido a tu Banco, si esta aqui es por que esta interesado   #\n");
     System.out.print    ("\033[36m #         en su futura nueva vivienda, y para esto vamos a ver si es       #\n");
@@ -21,8 +23,9 @@ public class Apartado1 {
     System.out.println("\033[37m Responda a las siguientes preguntas del test;");
     System.out.println(" ");
 
-    int trabajo = 0;
+    // aqui empieza la parte de tener trabajo
 
+    int trabajo = 0;
 
     Scanner sc = new Scanner(System.in);
     System.out.println("\033[33m Para responder SI, pulse 1.");
@@ -35,11 +38,13 @@ public class Apartado1 {
     {
         System.out.println("\033[37m Perfecto");
     }
-    while (trabajo == 2)
+    else if (trabajo == 2)
     {
-        System.out.println("\033[37m Valla, sin un puesto de trabajo fijo no podemos concederte una hipoteca");
+        System.out.println("\033[37m Sin un puesto de trabajo fijo no podemos concederte una hipoteca");
     }
 
+    // aqui sigue la segunda pregunta de el dinero que se desea solicitar
+    System.out.println(" ");
     System.out.println(" Vamos a la segunda pregunta");
     System.out.println(" ");
 //a partir de aqui se debera decidir si vale esta forma de pedir los datos al usuario
@@ -50,10 +55,11 @@ public class Apartado1 {
     System.out.println("\033[32m ¿Cuanto vale la vivienda que desea comprar?");
     precio = pr.nextInt();
 
+
     int porcentaje;
     porcentaje=precio/100*80;
 
-    System.out.println("\033[33m PUEDES PEDIR UN PRESTAMO DE  "+porcentaje+ "O INFERIOR");
+    System.out.println("\033[33m PUEDES PEDIR UN PRESTAMO DE  "+porcentaje+ "euros O INFERIOR");
     System.out.println(" ");
 
     int user=0;
@@ -70,14 +76,40 @@ public class Apartado1 {
         System.out.println("\033[37m Perfecto usted a decidido pedir un prestamo de "+user);
     }
 
+    //aqui finalizamos con la ultima pregunta de el dinero ahorrado
+    System.out.println(" ");
+    System.out.println(" Vamos a la tercera y ultima pregunta");
+    System.out.println(" ");
+    System.out.println("\033[33m El dinero ahorrado debe ser un 20% superior al precio de la vivienda");
+    System.out.println("\033[33m Recordamos que tu vivienda elegida tiene un valor de "+precio+" euros");
+    System.out.println(" ");
 
+    int ahorro=0;
+    ahorro=precio/100*20;
 
+    System.out.println("\033[33m De esta manera debes tener ahorrado como minimo "+ahorro+" euros.");
+    System.out.println(" ");
 
+    int confirmacion = 0;
 
+    Scanner scr = new Scanner(System.in);
+    System.out.println("\033[33m Para responder SI, pulse 1.");
+    System.out.println("\033[33m Para responder NO, pulse 2.");
+    System.out.println("\033[32m ¿Entonces tiene ahorrado como minimo "+ahorro+" euros?");
+    confirmacion = scr.nextInt();
 
-
-
-
-
+    if (confirmacion == 1)
+    {
+        System.out.println("\033[37m Perfecto");
+          System.out.println(" ");
+          System.out.println("\033[37m Enorhabuena!!! Los datos introducidos son aptos para hipotecar ");
+          System.out.println("\033[37m su futura casa.");
+          System.out.println(" ");
+          System.out.println("\033[37m Le esperamos mañana 21 de octubre a las 10:30 a.m.");
+    }
+    while (confirmacion == 2)
+    {
+        System.out.println("\033[37m Valla, sin un puesto de trabajo fijo no podemos concederte una hipoteca");
+    }
     }
 }
