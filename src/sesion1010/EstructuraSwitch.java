@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // programa que nos indica que dia de la semana es segun el numero que indicamos
 
-public class    EstructuraSwitch {
+public class   EstructuraSwitch {
 
     public static void main(String[] args) {
 

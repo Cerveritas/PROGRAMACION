@@ -40,7 +40,7 @@ public class Apartado1 {
     }
     else if (trabajo == 2)
     {
-        System.out.println("\033[37m Sin un puesto de trabajo fijo no podemos concederte una hipoteca");
+        System.out.println("\033[37m Sin un puesto de trabajo fijo no podemos concederte una hipoteca");return;
     }
 
     // aqui sigue la segunda pregunta de el dinero que se desea solicitar
@@ -59,7 +59,7 @@ public class Apartado1 {
     int porcentaje;
     porcentaje=precio/100*80;
 
-    System.out.println("\033[33m PUEDES PEDIR UN PRESTAMO DE  "+porcentaje+ "euros O INFERIOR");
+    System.out.println("\033[33m PUEDES PEDIR UN PRESTAMO DE  "+porcentaje+ " euros O INFERIOR");
     System.out.println(" ");
 
     int user=0;
@@ -69,11 +69,11 @@ public class Apartado1 {
 
     if (user > porcentaje)
     {
-        System.out.println("\033[31m El dinero solicitado es superior a lo indicado, vuelvalo a intentar");
+        System.out.println("\033[31m El dinero solicitado es superior a lo indicado, vuelvalo a intentar");return;
     }
     else if (user <= porcentaje)
     {
-        System.out.println("\033[37m Perfecto usted a decidido pedir un prestamo de "+user);
+        System.out.println("\033[37m Perfecto usted a decidido pedir un prestamo de "+user+" euros");
     }
 
     //aqui finalizamos con la ultima pregunta de el dinero ahorrado
@@ -85,20 +85,18 @@ public class Apartado1 {
     System.out.println(" ");
 
     int ahorro=0;
-    ahorro=precio/100*20;
+    ahorro=(precio/100)*20;
 
     System.out.println("\033[33m De esta manera debes tener ahorrado como minimo "+ahorro+" euros.");
     System.out.println(" ");
 
-    int confirmacion = 0;
 
-    Scanner scr = new Scanner(System.in);
-    System.out.println("\033[33m Para responder SI, pulse 1.");
-    System.out.println("\033[33m Para responder NO, pulse 2.");
-    System.out.println("\033[32m ¿Entonces tiene ahorrado como minimo "+ahorro+" euros?");
-    confirmacion = scr.nextInt();
+    int real=0;
+    Scanner rl = new Scanner(System.in);
+    System.out.println("¿Entonces, cuanto dinero tienes ahorrado?");
+    real = rl.nextInt();
 
-    if (confirmacion == 1)
+    if (ahorro<=real )
     {
         System.out.println("\033[37m Perfecto");
           System.out.println(" ");
@@ -107,9 +105,9 @@ public class Apartado1 {
           System.out.println(" ");
           System.out.println("\033[37m Le esperamos mañana 21 de octubre a las 10:30 a.m.");
     }
-    while (confirmacion == 2)
+    else if (ahorro > real)
     {
-        System.out.println("\033[37m Valla, sin un puesto de trabajo fijo no podemos concederte una hipoteca");
+        System.out.println("\033[37m Valla, no cumples con los requisitos para pedir el prestamo ");
     }
     }
 }
