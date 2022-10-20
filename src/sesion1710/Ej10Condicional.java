@@ -92,7 +92,7 @@ public class Ej10Condicional {
                 {
                     horoscopo = "Virgo";
                 } else {
-                    horoscopo = "Vibra";
+                    horoscopo = "Libra";
                 }
                 break;
             case 10:

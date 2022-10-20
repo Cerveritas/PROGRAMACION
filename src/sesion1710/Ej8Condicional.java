@@ -13,14 +13,16 @@ public class Ej8Condicional {
         System.out.println("\033[34m Digame la primera nota");
         nota = not.nextInt();
 
+        Scanner nol = new Scanner(System.in);
         System.out.println("\033[34m Digame la segunda nota");
-        nota1= not.nextInt();
+        nota1= nol.nextInt();
 
+        Scanner nokt = new Scanner(System.in);
         System.out.println("\033[34m Digame la tercera nota");
-        nota2= not.nextInt();
+        nota2= nokt.nextInt();
 
         int operacion;
-        operacion = nota+nota1+nota2/3;
+        operacion = (nota+nota1+nota2)/3;
 
 
         if (operacion>=0 && operacion<=4)
