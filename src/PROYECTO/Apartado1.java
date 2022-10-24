@@ -23,7 +23,9 @@ public class Apartado1 {
     System.out.println("\033[37m Responda a las siguientes preguntas del test;");
     System.out.println(" ");
 
-    // aqui empieza la parte de tener trabajo
+    /* declaramos la variable trabajo y la inicializamos para que el usuario
+       elija con 1 o 2 el resultado de si tiene trabajo o no.
+     */
 
     int trabajo = 0;
 
@@ -47,20 +49,26 @@ public class Apartado1 {
     System.out.println(" ");
     System.out.println(" Vamos a la segunda pregunta");
     System.out.println(" ");
-//a partir de aqui se debera decidir si vale esta forma de pedir los datos al usuario
     System.out.println("\033[33m El dinero que desea adqurir debe ser igual o menor al 80% del precio de la vivienda.");
+
+    // declaramos e inicializamos la variable "precio" a 0 para que el usuario ponga la cantidad de dinero que quiere adquirir
 
     int precio=0;
     Scanner pr = new Scanner(System.in);
     System.out.println("\033[32m ¿Cuanto vale la vivienda que desea comprar?");
     precio = pr.nextInt();
 
+    /* declaramos la variable "porcentaje" y la inicializamos a la formula asignada
+       que es el 80% del precio indicado anteriormente.
+     */
 
     int porcentaje;
     porcentaje=precio/100*80;
 
     System.out.println("\033[33m PUEDES PEDIR UN PRESTAMO DE  "+porcentaje+ " euros O INFERIOR");
     System.out.println(" ");
+
+    // declaramos e inicializamos el valor de "user" a 0 para que el usuario indique la cantidad a pedir.
 
     int user=0;
     Scanner us = new Scanner(System.in);
@@ -84,12 +92,22 @@ public class Apartado1 {
     System.out.println("\033[33m Recordamos que tu vivienda elegida tiene un valor de "+precio+" euros");
     System.out.println(" ");
 
+    /* declaramos e inicializamos la variable "ahorro" a 0 e indicamos que
+       el valor "ahorro" es el 20% de precio para indicar al usuario el
+       minimo de dinero que debe tener ahorrado.
+     */
+
     int ahorro=0;
     ahorro=(precio/100)*20;
 
     System.out.println("\033[33m De esta manera debes tener ahorrado como minimo "+ahorro+" euros.");
     System.out.println(" ");
 
+    /* por ultimo se declara la variable e inicializa "real" que es el dinero que el usuario
+       pondra que tiene ahorrado, de esta manera se confirmara o no si al usuario se le
+       concedera la hipoteca por tener todos los pasos correctos o de esta manera se le
+       denegara la hipoteca.
+     */
 
     int real=0;
     Scanner rl = new Scanner(System.in);
@@ -107,7 +125,7 @@ public class Apartado1 {
     }
     else if (ahorro > real)
     {
-        System.out.println("\033[37m Valla, no cumples con los requisitos para pedir el prestamo ");
+        System.out.println("\033[37m Valla, no has llegado a cumplir con todos los requisitos para pedir el prestamo ");
     }
     }
 }

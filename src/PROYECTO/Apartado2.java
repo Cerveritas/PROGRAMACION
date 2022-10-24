@@ -21,6 +21,11 @@ public class Apartado2 {
         System.out.println(" ");
         System.out.println("Vamos a empezar con asginar el radio, entonces:");
 
+        /* lo primero seria declarar las variables;
+           "r" que es el radio para que el usuario elija que valor quiere asignarle.
+           "pi" para inicializarlo al valor de 3.14
+         */
+
         int r = 0;
         double pi= 3.14;
         Scanner sc = new Scanner(System.in);
@@ -31,6 +36,11 @@ public class Apartado2 {
         System.out.println(" ");
         System.out.println("A continuacion elegiremos que queremos calcular:");
 
+        /* a continuacion declaramos e inicializamos la variable calculo a 0 para
+           que el usuario indique que valor quiere asignar para realizar un switch
+           a continuacion.
+         */
+
         int calculo=0;
         Scanner ca = new Scanner(System.in);
         System.out.println("\033[36m Pulsa 1, para calcular el PERIMETRO");
@@ -38,6 +48,10 @@ public class Apartado2 {
         System.out.println("\033[36m Pulse 3, para calcular el VOLUMEN");
         calculo = ca.nextInt();
 
+        /* aqui declaramos variables perimetro, area y volumen
+           y las inicialiazmos con sus respectivas formulas.
+
+         */
         double perimetro = 2*pi*r;
         double area = pi*(r*r);
         double volumen = (4*pi*(r*r*r))/3;
@@ -56,16 +70,5 @@ public class Apartado2 {
 
             default: System.out.println("El valor introducido es incorrecto");
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }
