@@ -13,8 +13,8 @@ public class Apartado2 {
         // introduccion
 
         System.out.print    ("\033[36m ############################################################################\n");
-        System.out.print    ("\033[36m #         Bienvenido a tu Matematico, si esta aqui es por que quiere       #\n");
-        System.out.print    ("\033[36m #         aplicar distintas formulaas de un circulo asique le              #\n");
+        System.out.print    ("\033[36m #         Bienvenido a tu Matematico, si estas aqui es por que quieres     #\n");
+        System.out.print    ("\033[36m #         aplicar distintas formulas de un circulo asique le               #\n");
         System.out.print    ("\033[36m #         le proporcionaremos la informacion necesaria                     #\n");
         System.out.print    ("\033[36m ############################################################################");
         System.out.println("\033[37m ");
@@ -26,30 +26,46 @@ public class Apartado2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("¿Cual es el valor que le quieres asignar al radio?");
         r = sc.nextInt();
-        System.out.println("EL RADIO HA SIDO ASIGNADO CON EL VALOR DE "+r);
+        System.out.println("\033[32m EL RADIO HA SIDO ASIGNADO CON EL VALOR DE "+r);
 
         System.out.println(" ");
         System.out.println("A continuacion elegiremos que queremos calcular:");
 
         int calculo=0;
         Scanner ca = new Scanner(System.in);
-        System.out.println("Pulsa 1, para calcular el PERIMETRO");
-        System.out.println("Pulse 2, para calcular el AREA");
-        System.out.println("Pulse 3, para calcular el VOLUMEN");
+        System.out.println("\033[36m Pulsa 1, para calcular el PERIMETRO");
+        System.out.println("\033[36m Pulse 2, para calcular el AREA");
+        System.out.println("\033[36m Pulse 3, para calcular el VOLUMEN");
         calculo = ca.nextInt();
+
+        double perimetro = 2*pi*r;
+        double area = pi*(r*r);
+        double volumen = (4*pi*(r*r*r))/3;
+
 
         switch (calculo)
         {
             //calculo del perimetro
-            case 1: {System.out.println("Aqui va la operacion del perimetro");break;}
+            case 1: {System.out.println("EL resultado del Perimetro es: "+perimetro);break;}
 
             //calculo del area
-            case 2: {System.out.println("Aqui va la operacion del area");break;}
+            case 2: {System.out.println("El resultado del Area es: "+area);break;}
 
             //calculo del volumen
-            case 3: {System.out.println("Aqui va la operacion del volumen");break;}
+            case 3: {System.out.println("El resultado del Volumen es: "+volumen);break;}
 
+            default: System.out.println("El valor introducido es incorrecto");
         }
+
+
+
+
+
+
+
+
+
+
+
     }
 }
-
