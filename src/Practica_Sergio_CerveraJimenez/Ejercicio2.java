@@ -1,8 +1,8 @@
-package PROYECTO;
+package Practica_Sergio_CerveraJimenez;
 
 import java.util.Scanner;
 
-public class Apartado2 {
+public class Ejercicio2 {
     /*
      * PROGRAMACION
      * UNIDAD 1 Y 2
