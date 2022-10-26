@@ -43,7 +43,7 @@ public class Ejercicio1 {
     else if (trabajo == 2)
     {
         System.out.println("\033[37m Sin un puesto de trabajo fijo no podemos concederte una hipoteca");return;
-    }
+    }else {System.out.println("Tu respuesta no es valida");return;}
 
     // aqui sigue la segunda pregunta de el dinero que se desea solicitar
     System.out.println(" ");
