@@ -1,6 +1,6 @@
-package ProyectoCasa;
+package CosasCasa;
 
-public class SalidaEstandar {
+public class Novia {
 
     public static void main(String[] args) {
 
