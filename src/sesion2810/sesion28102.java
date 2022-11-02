@@ -1,6 +1,8 @@
+package sesion2810;
+
 import java.util.Scanner;
 
-public class sesion2810 {
+public class sesion28102 {
     public class TiempoAltura{
         public static void main(String[] args) {
             final double G=9.8;
