@@ -1,5 +1,5 @@
 package sesion0311;
-/*
+
 
 import java.util.Scanner;
 
@@ -15,10 +15,13 @@ public class Simulacion {
         System.out.println("Introduzca segundo valor");
         x2 = sc.nextInt();
 
-        int numero=0;
-        switch (numero){
-            case 1: {System.out.println(Calculadora.obtenerSuma(Calculadora.suma));break;}
-            case 2: {System.out.println(resta.calculadora);
+
+
+
+        switch (x1){
+            case 1: {System.out.println("LA suma es "+Calculadora.class);break;}
+
+
 
         }
 
@@ -29,4 +32,3 @@ public class Simulacion {
 
     }
 }
-*/
