@@ -17,12 +17,36 @@ public class Array1 {
         notas_1ertrimestre[1]=8;
         notas_1ertrimestre[2]=6;
         notas_1ertrimestre[3]=3;
+        notas_1ertrimestre[4]=4;
 
-        notas_1ertrimestre[4]=5;
+        for (int i=0; i<5; i++) //el uso de este for es para imprimir
+        {
+            System.out.println(notas_1ertrimestre[i]);
+        }
+
+
+
+
 
 
         //forma 2
         int [] notas_2trimestre = {7,8,6,3,5};
+
+        for (int i=0; i<5; i++)  //el uso de este for es para imprimir
+        {
+            System.out.println(notas_2trimestre[i]);
+        }
+
+
+
+
+
+
+
+
+
+
+
 
 
         //forma 3
@@ -33,7 +57,11 @@ public class Array1 {
             {
                 System.out.println("Introduzcame su nota por favor");
                 notas_3trimestre[i] = sc.nextInt();
+
             }
+
+
+
 
 
 
