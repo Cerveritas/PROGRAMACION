@@ -28,9 +28,10 @@ public class ArrayBidimensional {
 
 
 
+
         //SEGUNDA forma.
         int [][] nota2 = {{1,2},{3,4}};
-        System.out.println(nota2[1][0]);
+        System.out.println(nota2[1][1]);
 
 
 
@@ -57,5 +58,6 @@ public class ArrayBidimensional {
                 notas3[i][j] = sc.nextInt();
             }
         }
+        System.out.println(notas3[0][1]);
     }
 }

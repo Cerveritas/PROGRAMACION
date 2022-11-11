@@ -26,7 +26,7 @@ public class Array1 {
 
 
 
-
+System.out.println("FORMA 2");
 
 
         //forma 2
@@ -36,6 +36,12 @@ public class Array1 {
         {
             System.out.println(notas_2trimestre[i]);
         }
+        System.out.println("Impresion de array con foreach");
+        for (int elemento:notas_2trimestre)
+        {
+            System.out.println(elemento);
+        }
+
 
 
 
@@ -59,6 +65,8 @@ public class Array1 {
                 notas_3trimestre[i] = sc.nextInt();
 
             }
+
+
 
 
 

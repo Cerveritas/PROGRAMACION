@@ -55,17 +55,17 @@ public class ArrayBidimensional2 {
         {
             for (int j=0; j<notas3[i].length; j++)
             {
-
-                    System.out.println("Introduzca la nota");
-                    notas3[i][j] = sc.nextInt();
-
+                System.out.println("Introduzca la nota");
+                notas3[i][j] = sc.nextInt();
             }
         }
-
-
-
-
-
-
+        for (int i=0; i<notas3.length; i++)
+        {
+            System.out.print("\n");
+            for (int j=0; j<notas3[i].length; j++)
+            {
+                System.out.print(notas3[i][j]);
+            }
+        }
     }
 }
