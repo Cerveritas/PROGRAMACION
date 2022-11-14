@@ -2,7 +2,7 @@ package sesion1411;
 
 public class BusquedaArrayBinarySearch {
     public static void main(String[] args) {
-
+//no funciona bien del todo
         String[] alumnos = {"Sergio","Nahiara","Peter","Serpe"};
 
         int posicion = java.util.Arrays.binarySearch(alumnos,"Sergio");
@@ -16,3 +16,5 @@ public class BusquedaArrayBinarySearch {
         }
     }
 }
+
+
