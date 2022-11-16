@@ -8,6 +8,8 @@ public class UsoDeArrayFill {
         java.util.Arrays.fill(numeros, 5);
         System.out.println(java.util.Arrays.toString(numeros));
 
+                                                                                                                        System.out.println(" "); //linea de separacion
+
         java.util.Arrays.fill(numeros, 2, 4, 8);
         System.out.println(java.util.Arrays.toString(numeros));
     }
