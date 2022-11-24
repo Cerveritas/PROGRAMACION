@@ -10,12 +10,20 @@ public class EjercicioArrayEnumerado {
         Scanner sc = new Scanner(System.in);
         int [][] notas = new int[2][3];
 
-        int programacion=0;
-        System.out.println("Introduce la nota de: PRACTICA 1 PROGRAMACION");
-        programacion = sc.nextInt();
+        for (int i=0; i<notas.length; i--){
+            for (int j=0; j<notas[i].length; j--)
+            {
+                System.out.println("Introduce la vaina1");
+                notas [i][j] = sc.nextInt();
+                System.out.println("456");
+                notas [i][j] = sc.nextInt();
+
+            }
+
+        }
 
 
-        System.out.println(programacion);
+
 
 
 
