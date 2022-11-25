@@ -23,15 +23,16 @@ public class Ejercicio1 {
         System.out.println("7.- Comparar si temperatura de dos mses (enumerados) introducidos son iguales.");
 
         numero = st.nextInt();
-        
+        float [] array_madrid = new float[12];
+
         
 
 
         switch (numero)
         {
-            case 0:{System.out.println("El programa ha finalizado");break;}
-            case 1: inicializar_array();break;
-            case 2: mayor_temperatura();break;
+            case 0:System.out.println("El programa ha finalizado");break;
+            case 1: array_madrid=inicializar_array(array_madrid);break;
+            case 2:  //= mayor_temperatura();break;
             case 3: //menor_temperatura()
             case 4: //sacar_temperatura()
             case 5: //temp_media_verano()
@@ -50,9 +51,7 @@ public class Ejercicio1 {
     //metodo1
     //he bajado lo que sale del metodo (float[] temperaturas = new float[2] y asi si me funciona
     //el System "hola" es para comprobar que me lleva a este metodo
-    public static float[] inicializar_array() {
-        float[] temperaturas = new float[2];
-
+    public static float[] inicializar_array(float[] temperaturas) {
 
         System.out.println("Hola");
 
@@ -63,8 +62,8 @@ public class Ejercicio1 {
 
 
     // metodo2
-    public static meses mayor_temperatura(){
-        float[] temperaturas;
+    public static meses mayor_temperatura(float[] temperaturas){
+
         System.out.println("Hola");
 
         return null;
