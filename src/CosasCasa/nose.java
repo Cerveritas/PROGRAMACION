@@ -1,46 +1,23 @@
 package CosasCasa;
 
+import java.util.Scanner;
+
 public class nose {
     public static void main(String[] args) {
 
-        int puntuacion=67;
+        int numero = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Que numero quieres pasar a binario");
+        numero = sc.nextInt();
 
-        if(puntuacion<1000) {
-
-            System.out.print("Debes aprender a jugar mejor, solo tienes " + puntuacion + " puntos.");
-
+        String base2 = "";
+        while (numero > 0) {
+            base2 = (numero % 2) + base2;
+            numero /= 2;
         }
-
-        else if(puntuacion<35000) {
-
-            System.out.print("No está mal, has sacado " + puntuacion + " puntos.");
-
-        }
-
-        else if(puntuacion<75000) {
-
-            System.out.print("Eres un pro, has sacado " + puntuacion + " puntos.");
-
-        }
-
-        else {
-
-            System.out.print("¡GENIO! ¿No serás un robot?");
-
-        }
-
+        System.out.println(base2);
     }
-
 }
-
-
-
-
-
-
-
-
-
 
 
 
