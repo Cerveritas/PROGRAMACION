@@ -3,7 +3,7 @@ package Practica_Programacion_Sergio_CerveraJimenez;
 import java.util.Scanner;
 public class Ejercicio1 {
 
-    private static float[] tempMes = new float[11];
+    private static float[] temperaturas;
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -31,14 +31,14 @@ public class Ejercicio1 {
 
 
         numero = st.nextInt();
-        float [] array_madrid = new float[12];
+
 
 
 
         switch (numero)
         {
             case 0:System.out.println("El programa ha finalizado");break;
-            case 1: array_madrid=inicializar_array(array_madrid);break;
+            case 1: temperaturas=inicializar_array(temperaturas);break;
             case 2: //array_madrid=mayor_temperatura(array_madrid);break;
             case 3: //menor_temperatura()
             case 4: //sacar_temperatura()
@@ -51,6 +51,7 @@ public class Ejercicio1 {
 
     //metodo1
     public static float[] inicializar_array(float[] temperaturas) {
+        temperaturas=new float[12];
 
         System.out.println("Lo primero que haremos sera meter los datos de la temperatura de cada mes");
         Scanner sc = new Scanner(System.in);
@@ -168,7 +169,7 @@ public class Ejercicio1 {
         Scanner sc = new Scanner(System.in);
 
 
-        if (tempMes.equals(meses.ABRIL))
+        if (temperaturas.equals(meses.ABRIL))
         System.out.println("IGUALES");
         else
         System.out.println("NO IGUALES");
