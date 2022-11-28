@@ -1,5 +1,6 @@
 package Practica_Programacion_Sergio_CerveraJimenez;
 
+import java.util.Arrays;
 import java.util.Scanner;
 public class Ejercicio1 {
 
@@ -53,6 +54,10 @@ public class Ejercicio1 {
     public static float[] inicializar_array(float[] temperaturas) {
         temperaturas=new float[12];
 
+        for (int i=0; i<12; i++)
+
+
+
         System.out.println("Lo primero que haremos sera meter los datos de la temperatura de cada mes");
         Scanner sc = new Scanner(System.in);
 
@@ -95,7 +100,7 @@ public class Ejercicio1 {
                                                                                                                         System.out.println(" ");
                                                                                                                         System.out.println(" ");
 
-        System.out.println("EL ARRAY CON SUS DEBIDAS TEMPERATURAS ES:");
+        System.out.println("EL ARRAY CON SUS DEBIDAS TEMPERATURAS ES: ");
                                                                                                                         System.out.println(" ");
 
         for (int i=0; i<temperaturas.length; i++) {

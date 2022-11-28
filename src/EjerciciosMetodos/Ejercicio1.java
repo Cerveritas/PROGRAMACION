@@ -5,49 +5,32 @@ import java.util.Scanner;
 public class Ejercicio1 {
     public static void main(String[] args) {
 
+        int numero;
+        System.out.println("Introduzca hasta que número quieres saber que es primo: ");
         Scanner sc = new Scanner(System.in);
-
-        int num;
-
-        System.out.print("Introduce el número: ");
-
-        num = sc.nextInt();
-
-        if (es_primo(num)){
-            System.out.println(num+" es primo.");
-        } else {
-            System.out.println(num+" no es primo.");
-        }
-
-    }
-
-    private static boolean es_primo (int n){
-
-        int num = n;
-        int div = 2;
-
-        boolean primo=false;
-
-        if (num == 2){
-            primo = true;
-        }   else {
-
-            while (num != 1) {
-
-                if (num % div == 0) {
-
-                    num = num / div;
-
-                } else {
-                    div++;
-                    if (num == div) {
-                        primo = true;
-                    }
-                }
+        numero=sc.nextInt();
+        for (int i=0;i<=numero;i++){
+            boolean resultado = esPrimo(i);
+            if (resultado) {
+                System.out.println(i + " Es primo");
+            } else {
+                System.out.println(i + " No es primo");
             }
+
         }
-
-        return primo;
     }
-
+    public static boolean esPrimo(int numero) {
+        // El 0, 1 y 4 no son primos
+        if (numero == 0 || numero == 1 || numero == 4) {
+            return false;
+        }
+        for (int x = 2; x < numero / 2; x++) {
+            // Si es divisible por cualquiera de estos números, no
+            // es primo
+            if (numero % x == 0)
+                return false;
+        }
+        // Si no se pudo dividir por ninguno de los de arriba, sí es primo
+        return true;
+    }
 }

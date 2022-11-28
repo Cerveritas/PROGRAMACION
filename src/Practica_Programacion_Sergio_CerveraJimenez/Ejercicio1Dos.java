@@ -25,7 +25,7 @@ public class Ejercicio1Dos {
         numero=sc.nextInt();
         switch (numero)
         {
-            case 0: temps=inicializar_array(temps);break;
+            case 1: temps=inicializar_array(temps);break;
             default:System.out.println("El nujkf");
         }
     }
