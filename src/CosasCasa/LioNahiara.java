@@ -26,6 +26,12 @@ public class LioNahiara {
 
         System.out.println("Respuesta correcta! Se ve que aprecias a tu novio");
 
+
+        System.out.println("Hola me llamo sergio");
+        System.out.println("Soy programador");
+        System.out.println("Me dedico principalmente al desarrollo de Software con el uso de JAVA");
+        System.out.println("Otro lenguaje de programacion que uso es JavaScript al implementarlo en mis paginas web hechas con HTML y CSS");
+
     }
 }
 
