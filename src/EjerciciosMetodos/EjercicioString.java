@@ -1,9 +1,10 @@
-package EjerciciosMetodos;
+/*package EjerciciosMetodos;
 
 import java.util.Scanner;
 
 public class EjercicioString {
     public static void main(String[] args) {
+
 
         Scanner sc = new Scanner(System.in);
 
@@ -33,6 +34,8 @@ public class EjercicioString {
 
             case 3: contar_longitud(palabra);
 
+            case 4: palabra_igual(boolean);
+
 
         }
     }
@@ -50,4 +53,9 @@ public class EjercicioString {
         }
         return resultado;
     }
+
+    private static boolean palabra_igual(boolean){
+
+    }
 }
+*/
