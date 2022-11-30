@@ -1,4 +1,4 @@
-package EjerciciosMetodos;
+/*package EjerciciosMetodos;
 
 import javax.management.monitor.StringMonitor;
 import java.util.Scanner;
@@ -54,7 +54,7 @@ public class Ejercicio3 {
                 }else{System.out.println("la palabra no esta vacia");}break;
 
 //-----------------------------------------------------------------------------------------------
-            case 9:
+            case 9: System.out.println(DevolverArray());break;
 
 
 //-----------------------------------------------------------------------------------------------
@@ -127,3 +127,4 @@ public class Ejercicio3 {
 
     }
 }
+*/
