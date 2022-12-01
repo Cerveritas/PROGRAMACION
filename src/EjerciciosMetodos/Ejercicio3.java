@@ -1,7 +1,8 @@
-/*package EjerciciosMetodos;
+package EjerciciosMetodos;
 
 import javax.management.monitor.StringMonitor;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
@@ -54,8 +55,10 @@ public class Ejercicio3 {
                 }else{System.out.println("la palabra no esta vacia");}break;
 
 //-----------------------------------------------------------------------------------------------
-            case 9: System.out.println(DevolverArray());break;
-
+            case 9:
+                char[] array = DevolverArray(nombre);
+                System.out.println(Arrays.toString(array));
+                break;
 
 //-----------------------------------------------------------------------------------------------
             default: System.out.println("No has introducido una opcion valida");break;
@@ -127,4 +130,3 @@ public class Ejercicio3 {
 
     }
 }
-*/
