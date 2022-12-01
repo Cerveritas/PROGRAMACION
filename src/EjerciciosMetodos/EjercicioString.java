@@ -8,7 +8,7 @@ public class EjercicioString {
 
         Scanner sc = new Scanner(System.in);
 
-        int opcion =0;
+        int opcion = 0;
         String palabra="";
 
         System.out.println("Que opcion quiere usted");
@@ -34,7 +34,7 @@ public class EjercicioString {
 
             case 3: contar_longitud(palabra);
 
-            case 4: palabra_igual(boolean);
+            case 4: palabra= palabra_igual(String palabra);
 
 
         }
@@ -54,7 +54,8 @@ public class EjercicioString {
         return resultado;
     }
 
-    private static boolean palabra_igual(boolean){
+    private static boolean palabra_igual(String palabra){
+
 
     }
 }
