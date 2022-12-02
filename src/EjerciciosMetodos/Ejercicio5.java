@@ -7,30 +7,35 @@ import java.util.Scanner;
 public class Ejercicio5 {
     public static void main(String[] args) {
 
-        System.out.println("Vamos a hacer un cambio de divisa");
-
-int radio =0;
-    CambioMoneda(radio);
-
-
-    }
-    public static double CambioMoneda(double moneda){
-        int opcion=0;
+        System.out.println("Introduzcame la moneda a cambiar");
         Scanner sc = new Scanner(System.in);
-        opcion = sc.nextInt();
+        double dinero_a_cambiar= sc.nextDouble();
 
-        switch (opcion)
-        {
-            case 1:
-                System.out.println("0,86 libras es 1€");break;
+        System.out.println("A que moneda quieres cambiar");
+        String moneda_a_cambiar=sc.next().toUpperCase();
 
-            case 2:System.out.println("1,38611 % es 1€");break;
+        // lo hacemos modo procedimiento
+        conversor(dinero_a_cambiar, moneda_a_cambiar);
 
-            case 3:System.out.println("129,852 yenes es 1€");break;
 
-            default:System.out.println("El numero introducido es incorrecto");
-        }
-        return 0; // <--- Cambiar
     }
+    public static void conversor(double dinero_a_cambiar, String moneda_a_cambiar){
 
+        final double DOLAR=1.28;     // constantes siempre en mayusculas.
+        final double LIBRA=0.86;
+        final double YENES=129.853;
+
+        double resultado=0;
+
+        switch (moneda_a_cambiar){
+
+            case "DOLAR": resultado=dinero_a_cambiar*DOLAR;break;
+            case "LIBRA": resultado=dinero_a_cambiar*LIBRA;break;
+            case "YENES": resultado=dinero_a_cambiar*YENES;break;
+            default:System.out.println("el valor introducido es incorrecto");break;
+
+        }
+        System.out.println("El dienero en euros "+dinero_a_cambiar+" es en "+moneda_a_cambiar+" "+resultado);
+
+    }
 }
