@@ -1,153 +1,190 @@
-/*package Practica_Programacion_Sergio_CerveraJimenez;
+package Practica_Programacion_Sergio_CerveraJimenez;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio2 {
-
-    private static String[] lista;
-    private static Scanner sc;
+    public static String[] lista;
     public static void main(String[] args) {
 
-        sc = new Scanner(System.in);
-        System.out.println("Introduzca el tamaño de la lista");
+
+        int opcion = 0;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce numericamente el tamaño de la lista de la compra: ");
         lista = new String[sc.nextInt()];
-        menu();
-    }
+        System.out.println("Lista de la compra creada correctamente... A continuacion, ¿que quieres hacer?");
+                                                                                                                        System.out.println(" ");
+        do{
+        System.out.println("-----------------------------------------------------------------------------------------------------------------");
+        System.out.println("(0) - Salir");
+        System.out.println("(1) - Hacer lista de la compra");
+        System.out.println("(2) - Numero de items de la lista de la compra");
+        System.out.println("(3) - Imprimir la lista de la compra");
+        System.out.println("(4) - Comprobar si existe 'elemento' y en que posicion se encuentra en la lista");
+        System.out.println("(5) - Comprobar numero de veces que se repite un producto en la lista de la compra introducido por teclado");
+        System.out.println("(6) - Numero de vocales de un producto introducido por teclado");
+        System.out.println("(7) - Eliminar el producto introducido por teclado de la lista si esta en la lista");
+        System.out.println("(8) - Insertar un nuevo producto en la lista");
+                                                                                                                        System.out.println(" ");
 
-    public static void menu(){
+        System.out.println("Elige una opcion: ");
+        opcion = sc.nextInt();
 
-        System.out.println("\nIntroduzca una opcion:\n" +
-                "0. Salir\n" +
-                "1. Hacer la lista de la compra\n" +
-                "2. Numero de items de la compra\n" +
-                "3. Imprimir lista de la compra\n" +
-                "4. Comprobar si exite elemento y en que posicion de la lista esta\n" +
-                "5. Comprobar numero de veces que se repite un porducto en la lista de la compra\n");
-
-
-        switch (sc.nextInt()) {
-            case 0:
-                break; //salir
-
-            case 1: // hacer la lista de la compra
-                lista = hacer_lista(lista);
-                System.out.println("La lista se ha rellenado correctamente");
-                menu();
+        switch (opcion) {
+            case 0: salirPrograma();
+                break;
+            case 1: lista = hacerListaCompra(lista);
+                System.out.println("La lista ha sido creada correctamente...");
+                                                                                                                        System.out.println(" ");
                 break;
 
-            case 2: // numero de items que tiene la lista
-                if (lista[0] != null) {
-                    System.out.println("El numero de items de la lista es: " + lista.length);
-                } else System.out.println("Primero debes inicializar el array usando la opcion 1");
-                menu();
+            case 2: System.out.println("El numero de items en la lista de la compra es: "+numeroDeItems(lista));
+                                                                                                                        System.out.println(" ");
                 break;
 
-            case 3: // te dice cuales son los elementos introducidos en la lista
-                if (lista[0] != null) {
-                    System.out.println("Los elementos de la lista son; ");
-                    imprimir_lista(lista);
-                } else System.out.println("Primero debes inicializar el array usando la opcion 1");
-                menu();
+            case 3: System.out.println("Los elementos de la lista introducidos por teclado son: ");
+                imprimirLista(lista);
+                                                                                                                        System.out.println(" ");
                 break;
 
-            case 4://comprobar si existe elemento y en que posicion de la lista esta
-                if (lista[0] != null) ;
-                System.out.println("Introduce el elemento que quieres comprobar");
-                int[] posiciones = buscar_elemento(lista, sc.next());
-                System.out.println("El elemento se encuentra en las posiciones ");
-                for (int i = 0; i < posiciones.length; i++) {
+            case 4: System.out.println("Introduce el elemento que quieres buscar en la lista: ");
+                int[]posiciones = buscarProducto(lista, sc.next());
+                System.out.print("El elemento se encuentra en la poscicion: ");
+                for(int i=0; i< posiciones.length; i++){
                     System.out.println(posiciones[i]);
                 }
-                menu();
+                                                                                                                        System.out.println(" ");
                 break;
 
-            case 5: // Comprobar numero de veces que se repite un producto
-                System.out.println("Introduce el elemento que quieres contar");
-                System.out.println("El elemento esta " + cuantas_veces(lista, sc.next()) + " veces");
-                menu();
+            case 5: System.out.println("Introduce el producto que quieres comprobar si esta repetido: ");
+                System.out.println("El producto esta repetido "+cuantasVeces(lista, sc.next())+" veces");
+                                                                                                                        System.out.println(" ");
                 break;
 
-            case 6: // Comprobar numero de vocales de un producto
-                System.out.println("Introduce el elemento de cuyas vocales quieres conocer");
-                String elemento = sc.next();
-                int[] contadores;
-                if (cuantas_veces(lista, elemento) > 0) {
-                    contadores = cuantas_vocales(elemento);
-                } else contadores = cuantas_vocales("");
-                System.out.println("La palabra " + elemento + " tiene las siguientes vocales\n " +
-                        "a --> " + contadores[0] + "\n" +
-                        "e --> " + contadores[1] + "\n" +
-                        "i --> " + contadores[2] + "\n" +
-                        "o --> " + contadores[3] + "\n" +
-                        "u --> " + contadores[4]);
-                menu();
+            case 6: System.out.println("Introduce el producto del que quieres conocer sus vocales: ");
+                String producto = sc.next();
+                int[] cantidad;
+                if(cuantasVeces(lista, producto) > 0){
+                    cantidad = numeroVocales(producto);
+                }else cantidad = numeroVocales(" ");
+                System.out.println("El producto "+producto+" contiene las siguientes vocales: ");
+                System.out.println("(a) --> "+cantidad[0]);
+                System.out.println("(e) --> "+cantidad[1]);
+                System.out.println("(i) --> "+cantidad[2]);
+                System.out.println("(o) --> "+cantidad[3]);
+                System.out.println("(u) --> "+cantidad[4]);
+                                                                                                                        System.out.println(" ");
                 break;
 
+            case 7: System.out.println("Introduce el producto que quieres eliminar de la lista: ");
+                lista = eliminarProducto(lista, sc.next());
+                                                                                                                        System.out.println(" ");
+                break;
 
+            case 8: System.out.println("Cual es producto que deseas añadir en la lista: ");
+                lista = añadirProducto(lista, sc.next());
+                                                                                                                        System.out.println(" ");
+                break;
 
-
-            default: System.out.println("El dato untroducido es erroneo, vuelva a intentarlo");
-            menu();
-            break;
+            default:
+                System.out.println("La opcion introducida no es correcta. Intentelo de nuevo");break;
         }
+    }while (opcion!=0);
     }
 
-    //metodo imprimir
-
-    private static void imprimir_lista(String[] lista) {
-        for (int i=0; i< lista.length; i++){
-            System.out.println(lista[i]);
-
-        }
+    // METODO 0 --> SALIR DEL PROGRAMA
+    public static void salirPrograma(){
+        System.out.println("Saliendo del Programa...");
     }
 
-    // metodo 1 para hacer la lista
-    private static String[] hacer_lista(String[] lista) {
-        for (int i=0; i<lista.length; i++){
+    // METODO 1 --> RELLENAS EN ARRAY DE "LISTA DE COMPRA"
+    public static String[] hacerListaCompra(String[] lista){
+        Scanner sc = new Scanner(System.in);
+        for(int i=0; i<lista.length; i++){
             System.out.println("Introduce el elemento nº "+i);
             lista[i] = sc.next();
         }
-        return lista;
+    return lista;
     }
 
-    // metodo 4 para buscar un elemento
-    private static int[] buscar_elemento(String[] lista, String elemento){
+    // METODO 2 --> TE SACA EL Nº DE PRODUCTOS QUE HAS METIDO EN LA LISTA
+    public static int numeroDeItems(String[] lista){
+        int numero=0;
+        numero = lista.length;
+        return  numero;
+
+    }
+
+    // METODO 4 --> COMPRUEBA SI EL PRODUCTO ELEGIDO ESTA EN LA LISTA O NO, Y SI ESTA EN QUE POSICION SE ENCUENTRA
+    public static int[] buscarProducto(String[]lista, String producto){
         int[] posiciones = new int[0];
-        for (int i=0; i< lista.length; i++){
-            if (lista[i].equals(elemento)){
-                posiciones= Arrays.copyOf(posiciones,posiciones.length+1);
-                posiciones[posiciones.length-1]=i;
+        for(int i = 0; i < lista.length; i++){
+            if(lista[i].equals(producto)){
+                posiciones= Arrays.copyOf(posiciones, posiciones.length+1);
+                posiciones[posiciones.length-1] = i;
             }
         }
         return posiciones;
     }
 
-    private static int[] cuantas_veces(String[] lista, String elemento){
-        int contador = 0;
-        for(int i = 0; i < lista.length; i++){
-            if (elemento.equals(lista[i])){
-                contador++;
-            }
-       }
-        return contador;
-    }
-
-    private static int[] cuantas_vocales(String elemento){
-        char[] elementoCharArray = elemento.toCharArray();
-        int[] contadores = {0, 0, 0, 0, 0};
-        for (int i=0; i< elementoCharArray.length; i++){
-            switch (elementoCharArray[i]){
-                case 'a': contadores[0]++;break;
-                case 'e': contadores[1]++;break;
-                case 'i': contadores[2]++;break;
-                case 'o': contadores[3]++;break;
-                case 'u': contadores[4]++;break;
+    // METODO 5 --> COMPRUEBA CUANTAS VECES ESTA REPETIDO O NO UN PRODUCTO EN NUESTRA LISTA DE LA COMPRA
+    public static int cuantasVeces(String[]lista, String producto){
+        int cantidad = 0;
+        for(int i = 0; i<lista.length; i++){
+            if(producto.equals(lista[i])){
+                cantidad++;
             }
         }
-        return contadores;
+    return cantidad;
     }
 
-}
+    // METODO 6 --> CUENTA EL NUMERO DE VOCALES QUE TIENE UN PRODUCTO A ELEGIR DE LA LISTA
+    public static int[] numeroVocales(String producto){
+        char[]productoCharArray = producto.toCharArray();
+        int[]cantidad = {0, 0, 0, 0, 0};
+        for(int i = 0; i < productoCharArray.length; i++){
+            switch (productoCharArray[i]){
+                case 'a': cantidad[0]++;break;
+                case 'e': cantidad[1]++;break;
+                case 'i': cantidad[2]++;break;
+                case 'o': cantidad[3]++;break;
+                case 'u': cantidad[4]++;break;
+            }
+        }
+    return cantidad;
+    }
 
-*/
+    // METODO 7 --> ELIMINA UN PRODUCTO DE LA LISTA INTRODUCIDO POR TECLADO
+    public static String[] eliminarProducto(String[]lista, String producto){
+        String[]listaFinal = new String[lista.length];
+        int j=0;
+        for (int i = 0; i < lista.length; i++){
+            if (!lista[i].equals(producto)){
+                if(!lista[i].equals(producto)){
+                    listaFinal[j] = lista[i];
+                    j++;
+                }
+            }
+        }
+        System.out.println("La nueva lista es:");
+        imprimirLista(listaFinal);
+        return lista;
+    }
+
+    // METODO 8 --> AÑADE UN PRODUCTO A LA LISTA INTRODUCIDO POR TECLADO
+    public static String[] añadirProducto(String[]lista, String producto){
+        lista = Arrays.copyOf(lista, lista.length);
+        lista[lista.length-1] = producto;
+        System.out.println("La nueva lista es: ");
+        imprimirLista(lista);
+        return lista;
+    }
+
+    // METODO AUXILIAR --> EL ENCARGADO DE ALGUNOS PRINTS DE ALGUNOS SUBMETODOS
+    public static void imprimirLista(String[]lista){
+        for(int i = 0; i<lista.length; i++){
+            System.out.println(lista[i]);
+        }
+    }
+}

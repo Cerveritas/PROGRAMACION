@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 
 public class Ejercicio6 {
-    public static int[]numeros;
     public Scanner sc;
 
     public static void main(String[] args) {
@@ -28,25 +27,24 @@ public class Ejercicio6 {
 
         switch (opcion)
         {
-            case 1:
-                System.out.println("De que tamaño deseas crear tu array");
-                numeros=generarArray(numeros);
-                System.out.println("El array se ha creado correctamente con un tamaño de "+);
-                break;
+            case 1: numeros=generarArray(int[]numeros);
 
-            case 2:numeros=devolverMinimo(numeros);
+                }
 
-            case 3:numeros=devolverMaximo(numeros);
 
-            case 4:numeros=devolverMedia(numeros);
+        //    case 2:numeros=devolverMinimo(numeros);break;
 
-            case 5:verSiNumeroEsta(numeros);
+        //    case 3:numeros=devolverMaximo(numeros);break;
 
-            case 6:numeros=devovlerPosicion(numeros);
+        //    case 4:numeros=devolverMedia(numeros);break;
 
-            case 7:numeros=copiarArray(numeros);
+        //    case 5:verSiNumeroEsta(numeros);break;
 
-                default:System.out.println("El numero introducido no es correcto.");
+        //    case 6:numeros=devovlerPosicion(numeros);break;
+
+        //    case 7:numeros=copiarArray(numeros);break;
+
+               // default:System.out.println("El numero introducido no es correcto.");break;
 
         }
 
@@ -55,32 +53,44 @@ public class Ejercicio6 {
     }
 
     // METODO 1 --> Genera un array
-    public static int[] generarArray(int[]numeros){
-    }
+    public static int[] generarArray(int numeros){
+        Scanner stc = new Scanner(System.in);
+        int[] array;
+        System.out.println("Intruzca la dimension del array");
+        int dimension = stc.nextInt();
+        array = new int[dimension];
+        for (int i=0; i<array.length; i++){
+            System.out.println("Introduzca el valor "+i);
+            array[i] = stc.nextInt();
+            return array;
 
 
-    public static int[] devolverMinimo(int[]numeros){
-    }
-
-    public static int[] devolverMaximo(int[]numeros){
-
-    }
-
-    public static int[] devolverMedia(int[]numeros){
-
-    }
-
-    public static boolean[] verSiNumeroEsta(int[]numeros){
 
     }
 
-    public static int[] devovlerPosicion(int[]numeros){
 
-    }
+    //public static int[] devolverMinimo(int[]numeros){
+  //  }
 
-    public static int[] copiarArray(int[]numeros){
+  //  public static int[] devolverMaximo(int[]numeros){
 
-    }
+  //  }
+
+  //  public static int[] devolverMedia(int[]numeros){
+
+  //  }
+
+  //  public static boolean[] verSiNumeroEsta(int[]numeros){
+
+  //  }
+
+  //  public static int[] devovlerPosicion(int[]numeros){
+
+  //  }
+
+ //   public static int[] copiarArray(int[]numeros){
+
+   // }
 
 
 }

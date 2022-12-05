@@ -1,158 +1,217 @@
 package Practica_Programacion_Sergio_CerveraJimenez;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio2Recarte {
-        private static float[] temperaturas;
-        private static Scanner sc;
+    private static String[] lista;
+    private static Scanner sc;
 
     public static void main(String[] args) {
 
         sc = new Scanner(System.in);
+        System.out.println("Introduzca el tamaño de la lista");
+        lista = new String[sc.nextInt()];
         menu();
+
     }
+        public static void menu() {
+            System.out.println("Introduca una opcion");
+            System.out.println("0 - SAlir");
+            System.out.println("1 - Hacer lista de la compra");
+            System.out.println("2 - Numrero de items de la compra");
+            System.out.println("3 - Imprimir lista de la compra");
+            System.out.println("4 - Comprobar si existe elemento y en que posicion de la lista esta");
+            System.out.println("5 - Compobar numero de veces que se repite un elemento de la lisa de la compra introducido");
+            System.out.println("6 - Numero de vocales en un producto intoducido por teclado");
+            System.out.println("7 - Eliminar el producto de la lista introducido por teclado");
+            System.out.println("8 - Introducir un nuevo elemento en la lista");
 
-    public static void menu(){
+            switch (sc.nextInt()) {
+                case 0:
+                    salir();
+                    break;
 
-        System.out.println("0 - Salir");
-        System.out.println("1 - Inicializar un array que recoja la temperatura media de cada mes del año.");
-        System.out.println("2 - Mostrar el mes (enumerado) con mayor temperatura.");
-        System.out.println("3 - Mostrar el mes (enumerado) con menos temperatura.");
-        System.out.println("4 - Imprimir la temperatura des mes introducido (de 1 a 12) por teclado.");
-        System.out.println("5 - Sacar la temperatura media de los meses de verano.");
-        System.out.println("6 - Sacar la temperatura media de los meses de invierno.");
-        System.out.println("7 - Comparar si la temperatura de dos meses (enumerado) introducidos son iguales. ");
+                case 1:
+                    lista = hacer_lista(lista);
+                    System.out.println("La lista se ha rellenado coreectamente");
+                    menu();
+                    break;
 
-        switch (sc.nextInt())
-        {
-            case 0: salir();break;
+                case 2:
+                    System.out.println("El numero de items de la lista es " + lista.length);
+                    System.out.println("El numero de items de la lista es: " + tamaño_lista(lista));
+                    menu();
+                    break;
 
-            case 1:
-                temperaturas=inicializarArray(temperaturas);
-                System.out.println("Lista inicializada correctamente...");
-                menu();
-                break;
+                case 3:
+                    System.out.println("Los elementos de la lista son: ");
+                    imprimirLista(lista);
+                    menu();
+                    break;
 
-            case 2:System.out.println("El mes con mayor temperatura ha sido "+mayor_temperatura(temperaturas));
-                menu();
-                break;
+                case 4:
+                    System.out.println("Introduce el elemento que quieres comprobar");
+                    int[] posiciones = buscar_elemento(lista, sc.next());
+                    System.out.println("El elemento se encuentra en las posiciones ");
+                    for (int i = 0; i < posiciones.length; i++) {
+                        System.out.println(posiciones[i]);
+                        if (i != posiciones.length - 1) {
+                            System.out.println(", ");
+                        }
+                    }
+                    menu();
+                    break;
 
-            case 3:System.out.println("El mes con menor tempeatura ha sido "+menor_temperatura(temperaturas));
-                menu();
-                break;
+                case 5:
+                    System.out.println("Introduce el elemento que quieres contat");
+                    System.out.println("El elemento es " + cuantas_veces(lista, sc.next()) + " veces");
+                    menu();
+                    break;
 
-            case 4:System.out.println("Escribe es mes del que quieres sabre la temperatura: ");
-                int mes= sc.nextInt();
-                System.out.println("La temperatura media fue de: "+sacar_temperatura(mes, temperaturas));
-                menu();
-                break;
+                case 6:
+                    System.out.println("Introduce el elemento de cuyas vocales quieres conocer");
+                    String elemento = sc.next();
+                    int[] contadores;
+                    if (cuantas_veces(lista, elemento) > 0) {
+                        contadores = cuantas_vocales(elemento);
+                    } else contadores = cuantas_vocales("");
+                    System.out.println("La palabra " + elemento + " tiene las siguientess vocales: ");
+                    System.out.println("a --> " + contadores[0]);
+                    System.out.println("e --> " + contadores[1]);
+                    System.out.println("i --> " + contadores[2]);
+                    System.out.println("o --> " + contadores[3]);
+                    System.out.println("u --> " + contadores[4]);
+                    menu();
+                    break;
 
-            case 5:System.out.println("La temperatura media de los meses de verano es "+sacarTemp_verano(temperaturas));
-                menu();
-                break;
+                case 7:
+                    System.out.println("Introduce el elemento que quieres eliminar");
+                    lista = eliminar_elemento(lista, sc.next());
+                    System.out.println("La nueva lista es: ");
+                    imprimirLista(lista);
+                    menu();
+                    break;
 
-            case 6:System.out.println("La temperatura media de los meses de invierno es "+sacarTemp_invierno(temperaturas));
-                menu();
-                break;
+                case 8:
+                    System.out.println("Introduce el elemento que quieres añadir");
+                    lista = añadir_elememto(lista, sc.next());
+                    System.out.println("La nueva lista es: ");
+                    imprimirLista(lista);
+                    menu();
+                    break;
 
-            case 7:
-                System.out.println("Introduce el primer mes que quieres comparar: ");
-                    meses mes1 = meses.valueOf(sc.next().toUpperCase());
-                System.out.println("Introduce el segundo mes que quieres comparar: ");
-                    meses mes2 = meses.valueOf(sc.next().toUpperCase());
-                if (comparar_temperaturas(mes1, mes2, temperaturas) == true){
-                    System.out.println("Los meses comparados tienen la misma temperatura");
-                }else{
-                    System.out.println("Los meses comparados tienen distinta temperatura");
-                }
-                menu();
-                break;
-
-
-            default:System.out.println("El dato introducido es erroneo, vuelva a intentar");
+                default:
+                    System.out.println("EL numero introducido es incorrecto, vuelva a intentarlo");
+                    menu();
+                    break;
+            }
         }
-    }
+
+
+
 
     public static void salir(){
-        System.out.println("Saliendo del programa...");
+        System.out.println("Saliendo del programa");
     }
 
-    public static float[] inicializarArray(float[]temperaturas){
-        temperaturas=new float[12];
-            for (int i=0; i<12; i++){
-                System.out.println("Introduce la temperatura media de "+sacar_mes(i));
-                temperaturas[i] = sc.nextInt();
-            }
-        return temperaturas;
-    }
-
-    public static meses mayor_temperatura(float[]temperaturas){
-        float mayorTemp = temperaturas[0];
-        int mes = 0;
-            for(int i=0; i<12; i++){
-                if(mayorTemp < temperaturas[i]){
-                    mayorTemp = temperaturas[i];
-                    mes = i;
-                }
-            }
-        return sacar_mes(mes);
-    }
-
-    public static meses menor_temperatura(float[]temperaturas){
-        float menorTemp = temperaturas[0];
-        int mes = 0;
-            for(int i=0; i<12; i++){
-                if(menorTemp > temperaturas[i]){
-                    menorTemp = temperaturas[i];
-                    mes = i;
-                }
-            }
-        return sacar_mes(mes);
-    }
-
-    public static float sacar_temperatura(int mes, float[]temperaturas){
-        return temperaturas[mes];
-    }
-
-    public static float sacarTemp_verano(float[]temperaturas){
-        return(temperaturas[6]+temperaturas[7]+temperaturas[8]);
-    }
-
-    public static float sacarTemp_invierno(float[]temperaturas){
-        return(temperaturas[6]+temperaturas[7]+temperaturas[8]/3);
-    }
-
-    public static boolean comparar_temperaturas(meses mes1, meses mes2, float[]temperaturas){
-        if(temperaturas[sacar_indice(mes1)] == temperaturas[sacar_indice(mes2)]){
-            return true;
-        }else{
-            return false;
+    public static String[] hacer_lista(String[]lista){
+        for(int i=0; i<lista.length; i++){
+            System.out.println("Introduce el elemento nº "+i);
+            lista[i] = sc.next();
         }
+        return lista;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-    public static meses sacar_mes (int i){
-        return meses.values()[i];
+    public static int tamaño_lista(String[]lista){
+        return lista.length;
     }
 
-    public static int sacar_indice(meses mes){
-        int indice = -1;
-        for(int i=0; i<meses.values().length; i++){
-            if(mes.equals(meses.values()[i])){
-                indice=i;
+    public static int[] buscar_elemento(String[]lista, String elemento){
+        int[] posiciones  = new int[0];
+        for (int i = 0; i<lista.length; i++){
+            if(lista[i].equals(elemento)){
+                posiciones = Arrays.copyOf(posiciones, posiciones.length+1);
+                posiciones[posiciones.length-1] = i;
             }
         }
-        return indice;
+        return posiciones;
+    }
+
+    public static int cuantas_veces(String[]lista, String elemento){
+        int contador = 0;
+        for (int i = 0; i<lista.length; i++){
+            if(elemento.equals(lista[i])){
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    public static int[] cuantas_vocales(String elemento){
+        char[] elementoCharArray = elemento.toCharArray();
+        int[]contadores = {0, 0, 0, 0, 0};
+        for (int i = 0; i<elementoCharArray.length; i++){
+            switch (elementoCharArray[i]){
+                case 'a':
+                    contadores[0]++;
+                    break;
+                case 'e':
+                    contadores[1]++;
+                    break;
+                case 'i':
+                    contadores[2]++;
+                    break;
+                case 'o':
+                    contadores[3]++;
+                    break;
+                case 'u':
+                    contadores[4]++;
+                    break;
+
+
+            }
+        }
+        return contadores;
+    }
+
+    public static String[] eliminar_elemento(String[]lista, String elemento) {
+        String[] lista_resultado = new String[lista.length - cuantas_veces(lista, elemento)];
+        int j = 0;
+        for (int i = 0; i < lista.length; i++) {
+            if (!lista[i].equals(elemento)) {
+                if (!lista[i].equals(elemento)) {
+                    lista_resultado[j] = lista[i];
+                    j++;
+                }
+            }
+
+        }
+        System.out.println("La nueva lista es: ");
+        imprimirLista(lista_resultado);
+        return lista_resultado;
+    }
+
+    public static String[] añadir_elememto(String[]lista, String elemento) {
+            lista = Arrays.copyOf(lista, lista.length);
+            lista[lista.length - 1] = elemento;
+            System.out.println("La nueva lista es: ");
+            imprimirLista(lista);
+            return lista;
+        }
+
+
+
+
+
+
+
+    public static void imprimirLista(String[]lista) {
+        for (int i=0; i<lista.length; i++){
+            System.out.println(lista[i]);
+            if(i != lista.length-1) {
+                System.out.println(", ");
+            }
+        }
     }
 }
