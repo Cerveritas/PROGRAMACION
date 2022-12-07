@@ -4,9 +4,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio2 {
-    public static String[] lista;
+
     public static void main(String[] args) {
 
+        String[] lista = new String[0];
 
         int opcion = 0;
 

@@ -3,10 +3,10 @@ package Practica_Programacion_Sergio_CerveraJimenez;
 import java.util.Scanner;
 
 public class Ejercicio1 {
-    private static float[] temperaturas;
+
     public static void main(String[] args) {
 
-
+        float[]temperaturas = new float[12];
         int opcion=0;
         do {
             Scanner sc = new Scanner(System.in);
