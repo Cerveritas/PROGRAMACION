@@ -5,7 +5,7 @@ public class BusquedaArrayBinarySearch {
 //no funciona bien del todo
         String[] alumnos = {"Sergio","Nahiara","Peter","Serpe"};
 
-        int posicion = java.util.Arrays.binarySearch(alumnos,"Sergio");
+        int posicion = java.util.Arrays.binarySearch(alumnos,"nahiara");
         if (posicion<0)
         {
             System.out.println("El nombre no se encuentra en la lista");
